@@ -36,6 +36,7 @@ a:focus-visible { outline: 3px solid rgba(0,79,171,.35); outline-offset: 2px; bo
 .brand { display: inline-flex; align-items: center; gap: 10px; }
 .logo { width: 40px; height: 40px; object-fit: contain; }
 .brand-name { font-weight: 700; color: var(--primary); letter-spacing: .2px; }
+.site-title-mobile { display: none; font-weight: 800; color: #0f1b2d; }
 .nav { display: flex; gap: 18px; align-items: center; }
 .nav-link { color: #1b2a44; font-weight: 600; opacity: .9; }
 .nav-link:hover { color: var(--primary); }
@@ -52,11 +53,12 @@ a:focus-visible { outline: 3px solid rgba(0,79,171,.35); outline-offset: 2px; bo
 /* Mobile nav layout */
 @media (max-width: 900px) {
   .nav-toggle { display: inline-flex; }
+  .site-title-mobile { display: inline-block; margin-left: 8px; margin-right: auto; font-size: 15px; letter-spacing: .2px; color: #0e1f3f; }
   .nav { position: fixed; top: var(--mobile-nav-top, 64px); left: 0; right: 0; /* abaixo do header */
          display: none; gap: 8px; padding: 12px; background: rgba(255,255,255,.98); backdrop-filter: blur(6px);
          border-bottom: 1px solid rgba(0,0,0,.08); z-index: 100; box-shadow: 0 8px 20px rgba(0,0,0,.12); }
   .site-header { position: sticky; top: 0; z-index: 120; background: #fff; }
-  .header-inner { position: relative; }
+  .header-inner { position: relative; padding: 12px 24px; }
   .nav.is-open { display: grid; }
   body.menu-open #site-nav { display: grid; }
   .nav-link { padding: 10px 8px; font-size: 16px; }

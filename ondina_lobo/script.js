@@ -6,18 +6,52 @@
 
 // Smooth scroll for internal links
 (function enableSmoothScroll(){
-  const links = document.querySelectorAll('a[href^="#"]');
-  links.forEach(a => {
-    a.addEventListener('click', (e) => {
-      const hash = a.getAttribute('href');
-      if (!hash || hash === '#') return;
-      const el = document.querySelector(hash);
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      const el = document.querySelector(id);
       if (el) {
         e.preventDefault();
         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
   });
+
+  // Mobile nav toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const siteNav = document.getElementById('site-nav');
+  if (navToggle && siteNav) {
+    const links = siteNav.querySelectorAll('a');
+    const closeMenu = () => {
+      siteNav.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('menu-open');
+    };
+    const openMenu = () => {
+      siteNav.classList.add('is-open');
+      navToggle.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('menu-open');
+    };
+    const toggleMenu = () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      expanded ? closeMenu() : openMenu();
+    };
+    navToggle.addEventListener('click', toggleMenu);
+    // Fallback: delegated handler in caso de binding falhar
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.nav-toggle');
+      if (btn) {
+        e.preventDefault();
+        toggleMenu();
+      }
+    });
+    // Close on escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+    // Close on link click
+    links.forEach(l => l.addEventListener('click', closeMenu));
+  }
 })();
 
 // GSAP animations

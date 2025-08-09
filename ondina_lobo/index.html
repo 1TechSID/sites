@@ -26,7 +26,12 @@
         <img src="assets/images/Logo.png" alt="Logo Casa de Velhinhos Ondina Lobo" class="logo" />
         <span class="brand-name">Casa de Velhinhos Ondina Lobo</span>
       </a>
-      <nav class="nav">
+      <button class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Abrir menu">
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+      </button>
+      <nav id="site-nav" class="nav" aria-label="Navegação principal">
         <a href="#como-doar" class="nav-link">Como doar</a>
         <a href="#video" class="nav-link">Vídeo</a>
         <a href="#impacto" class="nav-link">Impacto</a>
@@ -100,7 +105,7 @@
               <h3>Acesse o sistema da Nota Fiscal Paulista</h3>
               <p>Entre no site oficial do programa e faça o login com seu CPF e senha. Se for seu primeiro acesso, realize um breve cadastro.</p>
               <div class="step-actions">
-                <a class="link-external" href="#" aria-disabled="true" title="Link oficial será adicionado">Abrir o site oficial</a>
+                <a class="cta" href="https://www.nfp.fazenda.sp.gov.br" target="_blank" rel="noopener" aria-label="Abrir o site oficial da Nota Fiscal Paulista em nova aba">Abrir site oficial</a>
               </div>
             </div>
           </li>

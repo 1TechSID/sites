@@ -71,7 +71,30 @@ window.addEventListener('load', () => {
     gsap.from('.site-header', { y: -30, opacity: 0, duration: 0.6, ease: 'power2.out' });
     gsap.from('.hero h1', { y: 20, opacity: 0, duration: 0.8, delay: 0.1, ease: 'power2.out' });
     gsap.from('.subtitle', { y: 16, opacity: 0, duration: 0.8, delay: 0.2, ease: 'power2.out' });
-    gsap.from('.hero-ctas .cta', { y: 16, opacity: 0, duration: 0.6, delay: 0.3, ease: 'power2.out', stagger: 0.08 });
+    gsap.fromTo(
+      '.hero-ctas .cta',
+      { y: 16, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        delay: 0.3,
+        ease: 'power2.out',
+        stagger: 0.08,
+        force3D: false,
+        onComplete: function() { gsap.set(this.targets(), { clearProps: 'transform,opacity' }); }
+      }
+    );
+
+    // Fallback: garantir reset absoluto após animação
+    setTimeout(() => {
+      const ctas = document.querySelectorAll('.hero-ctas .cta');
+      ctas.forEach(el => {
+        el.style.transform = 'none';
+        el.style.opacity = '';
+        el.style.willChange = '';
+      });
+    }, 1200);
 
     // Scroll indicator gentle bounce
     if (document.querySelector('.scroll-indicator')) {

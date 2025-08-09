@@ -20,6 +20,7 @@
   // Mobile nav toggle
   const navToggle = document.querySelector('.nav-toggle');
   const siteNav = document.getElementById('site-nav');
+  const headerEl = document.querySelector('.site-header');
   if (navToggle && siteNav) {
     const links = siteNav.querySelectorAll('a');
     const closeMenu = () => {
@@ -28,6 +29,9 @@
       document.body.classList.remove('menu-open');
     };
     const openMenu = () => {
+      // posiciona o painel logo abaixo do header medindo a altura real
+      const h = headerEl ? headerEl.offsetHeight : 64;
+      document.documentElement.style.setProperty('--mobile-nav-top', `${h}px`);
       siteNav.classList.add('is-open');
       navToggle.setAttribute('aria-expanded', 'true');
       document.body.classList.add('menu-open');
@@ -36,7 +40,7 @@
       const expanded = navToggle.getAttribute('aria-expanded') === 'true';
       expanded ? closeMenu() : openMenu();
     };
-    navToggle.addEventListener('click', toggleMenu);
+    navToggle.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); toggleMenu(); });
     // Fallback: delegated handler in caso de binding falhar
     document.addEventListener('click', (e) => {
       const btn = e.target.closest('.nav-toggle');
@@ -51,6 +55,11 @@
     });
     // Close on link click
     links.forEach(l => l.addEventListener('click', closeMenu));
+
+    // Close when resizing to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) closeMenu();
+    });
   }
 })();
 

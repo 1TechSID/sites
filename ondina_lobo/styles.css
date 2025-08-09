@@ -52,12 +52,13 @@ a:focus-visible { outline: 3px solid rgba(0,79,171,.35); outline-offset: 2px; bo
 /* Mobile nav layout */
 @media (max-width: 900px) {
   .nav-toggle { display: inline-flex; }
-  .nav { position: absolute; top: calc(100% + 8px); left: 0; right: 0; /* imediatamente abaixo do header */
+  .nav { position: fixed; top: var(--mobile-nav-top, 64px); left: 0; right: 0; /* abaixo do header */
          display: none; gap: 8px; padding: 12px; background: rgba(255,255,255,.98); backdrop-filter: blur(6px);
          border-bottom: 1px solid rgba(0,0,0,.08); z-index: 100; box-shadow: 0 8px 20px rgba(0,0,0,.12); }
   .site-header { position: sticky; top: 0; z-index: 120; background: #fff; }
   .header-inner { position: relative; }
   .nav.is-open { display: grid; }
+  body.menu-open #site-nav { display: grid; }
   .nav-link { padding: 10px 8px; font-size: 16px; }
   .nav .cta--small { justify-self: start; }
 }

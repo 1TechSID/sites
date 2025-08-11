@@ -153,4 +153,36 @@ window.addEventListener('load', () => {
       revealUp('.site-footer .footer-cta, .footer-grid, .footer-bottom');
     }
   }
+
+  // Copy CNPJ to clipboard
+  const copyBtn = document.getElementById('copy-cnpj-btn');
+  const cnpjTextEl = document.getElementById('cnpj-text');
+  if (copyBtn && cnpjTextEl) {
+    const originalTitle = copyBtn.getAttribute('title') || 'Copiar CNPJ';
+    copyBtn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const raw = (cnpjTextEl.textContent || '').replace(/[^\d]/g, '');
+      try {
+        await navigator.clipboard.writeText(raw);
+        copyBtn.classList.add('is-copied');
+        copyBtn.setAttribute('aria-live', 'polite');
+        copyBtn.setAttribute('aria-label', 'CNPJ copiado');
+        copyBtn.setAttribute('title', 'Copiado!');
+        setTimeout(() => {
+          copyBtn.classList.remove('is-copied');
+          copyBtn.setAttribute('aria-label', 'Copiar CNPJ para área de transferência');
+          copyBtn.setAttribute('title', originalTitle);
+        }, 1800);
+      } catch (err) {
+        // Fallback: seleciona o texto visível
+        const range = document.createRange();
+        range.selectNodeContents(cnpjTextEl);
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        try { document.execCommand('copy'); } catch (_) {}
+        sel.removeAllRanges();
+      }
+    });
+  }
 });

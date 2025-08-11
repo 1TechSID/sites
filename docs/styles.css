@@ -76,9 +76,9 @@ a:focus-visible { outline: 3px solid rgba(0,79,171,.35); outline-offset: 2px; bo
   position: absolute; inset: 0; z-index: 1;
   /* overlay apenas à esquerda; direita totalmente livre para a foto */
   background: linear-gradient(90deg,
-    rgba(7,20,38,.66) 0%,
-    rgba(7,20,38,.52) 26%,
-    rgba(7,20,38,.26) 48%,
+    rgba(7,20,38,.72) 0%,
+    rgba(7,20,38,.58) 26%,
+    rgba(7,20,38,.34) 48%,
     rgba(7,20,38,0) 68%,
     rgba(7,20,38,0) 100%
   );
@@ -99,6 +99,13 @@ a:focus-visible { outline: 3px solid rgba(0,79,171,.35); outline-offset: 2px; bo
 .subtitle { font-size: clamp(16px, 2.4vw, 20px); color: #22314f; opacity: .95; margin: 0 0 26px; }
 .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
 
+/* Eyebrow tag (desktop) */
+.eyebrow {
+  display: inline-block; margin: 0 0 10px; padding: 6px 12px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .4px; text-transform: uppercase;
+  color: #0e1f3f; background: #ffffff; border: 1px solid rgba(0,0,0,.10);
+  text-shadow: none; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 6px 14px rgba(0,0,0,.10);
+}
 .cta { display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   background: var(--primary); color: #fff; height: 44px; padding: 0 20px; border-radius: 999px; border: 2px solid transparent; line-height: 1; transform: translateZ(0);
   box-shadow: 0 8px 18px rgba(0,79,171,.28); font-weight: 700; letter-spacing: .2px;
@@ -156,6 +163,25 @@ a:focus-visible { outline: 3px solid rgba(0,79,171,.35); outline-offset: 2px; bo
 .section.passos .cta { padding: 12px 16px; box-shadow: 0 6px 14px rgba(0,79,171,.18); }
 .section.passos .cta:hover { box-shadow: 0 10px 18px rgba(0,79,171,.22); }
 .link-external[aria-disabled="true"] { opacity: .55; pointer-events: none; }
+
+/* Copy CNPJ button */
+.copy-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  margin-left: 8px; vertical-align: middle;
+  width: 28px; height: 28px; border-radius: 8px;
+  border: 1px solid rgba(0,0,0,.12); background: #fff; color: #0e2242;
+  cursor: pointer; transition: background .18s ease, transform .12s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.copy-btn:hover { background: #f3f7ff; border-color: rgba(0,79,171,.28); box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+.copy-btn:active { transform: translateY(1px) scale(.98); }
+.copy-btn.is-copied { background: #e8f2ff; border-color: rgba(0,79,171,.45); color: var(--primary); }
+.copy-btn .check-icon { display: none; }
+.copy-btn.is-copied .copy-icon { display: none !important; }
+.copy-btn.is-copied .check-icon { display: inline !important; }
+.section.passos .cta--nfp { margin-top: 10px; }
+@media (max-width: 420px) {
+  .copy-btn { width: 32px; height: 32px; border-radius: 10px; }
+}
 
 /* Impact detailed */
 .section.impacto-detalhe { padding: 50px 0 70px; }

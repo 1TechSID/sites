@@ -153,4 +153,74 @@ window.addEventListener('load', () => {
       revealUp('.site-footer .footer-cta, .footer-grid, .footer-bottom');
     }
   }
+
+  // Copy CNPJ to clipboard
+  const copyBtn = document.getElementById('copy-cnpj-btn');
+  const cnpjTextEl = document.getElementById('cnpj-text');
+  if (copyBtn && cnpjTextEl) {
+    const originalTitle = copyBtn.getAttribute('title') || 'Copiar CNPJ';
+    const copyIcon = copyBtn.querySelector('.copy-icon');
+    const checkIcon = copyBtn.querySelector('.check-icon');
+
+    const setCopiedState = (copied) => {
+      if (copied) {
+        copyBtn.classList.add('is-copied');
+        if (copyIcon) copyIcon.style.display = 'none';
+        if (checkIcon) checkIcon.style.display = 'inline';
+        copyBtn.setAttribute('aria-live', 'polite');
+        copyBtn.setAttribute('aria-label', 'CNPJ copiado');
+        copyBtn.setAttribute('title', 'Copiado!');
+      } else {
+        copyBtn.classList.remove('is-copied');
+        if (copyIcon) copyIcon.style.display = 'inline';
+        if (checkIcon) checkIcon.style.display = 'none';
+        copyBtn.setAttribute('aria-label', 'Copiar CNPJ para área de transferência');
+        copyBtn.setAttribute('title', originalTitle);
+      }
+    };
+
+    copyBtn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const raw = (cnpjTextEl.textContent || '').replace(/[^\d]/g, '');
+      try {
+        await navigator.clipboard.writeText(raw);
+        setCopiedState(true);
+        setTimeout(() => setCopiedState(false), 1800);
+      } catch (err) {
+        // Fallback
+        const range = document.createRange();
+        range.selectNodeContents(cnpjTextEl);
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        try { document.execCommand('copy'); setCopiedState(true); setTimeout(() => setCopiedState(false), 1800); } catch (_) {}
+        sel.removeAllRanges();
+      }
+    });
+  }
+
+  // Go to NFP with CNPJ copied
+  // (removido)
+  const goBtn = document.getElementById('go-to-nfp-btn');
+  if (goBtn && cnpjTextEl) {
+    goBtn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const raw = (cnpjTextEl.textContent || '').replace(/[^\d]/g, '');
+      let copied = false;
+      try {
+        await navigator.clipboard.writeText(raw);
+        copied = true;
+      } catch (_) {
+        // ignore
+      }
+      // feedback rápido no texto do botão
+      const original = goBtn.textContent;
+      if (copied) {
+        goBtn.textContent = 'CNPJ copiado! Abrindo o site...';
+      }
+      // abrir site da NFP
+      window.open('https://www.nfp.fazenda.sp.gov.br', '_blank', 'noopener');
+      setTimeout(() => { goBtn.textContent = original; }, 1800);
+    });
+  }
 });

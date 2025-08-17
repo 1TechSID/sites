@@ -145,6 +145,7 @@ li {
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 0 20px;
+    height: 80px; /* Altura fixa para o cabeçalho */
 }
 
 .logo img {
@@ -164,20 +165,20 @@ li {
 .main-nav ul {
     display: flex;
     list-style: none;
-    gap: 2.5rem;
+    gap: 1.75rem; /* Espaçamento mais reduzido */
     margin: 0;
     padding: 0;
     align-items: center;
 }
 
+
 .main-nav a {
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 0.85rem; /* Fonte do menu mais reduzida */
     color: var(--text-dark);
     position: relative;
     padding: 0.5rem 0;
     transition: color var(--transition-speed) ease;
-    display: inline-block;
     text-decoration: none;
 }
 
@@ -185,53 +186,70 @@ li {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 0;
     height: 2px;
     background-color: var(--primary-color);
-    transition: width var(--transition-speed) ease;
+    transition: width 0.4s ease;
+}
+
+.main-nav a:hover, 
+.main-nav a.active {
+    color: var(--primary-dark);
 }
 
 .main-nav a:hover::after, 
-.main-nav a[aria-current="page"]::after {
+.main-nav a.active::after {
     width: 100%;
 }
 
-.btn-contact, .btn-ghost {
-    padding: 0.75rem 1.5rem;
+.btn {
+    padding: 0.6rem 1.4rem; /* Padding geral mais reduzido */
     border-radius: 50px;
     font-weight: 600;
-    font-size: 0.95rem;
-    transition: all var(--transition-speed) ease;
-    border: 2px solid var(--primary-color);
-    display: inline-block !important;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.3s ease;
     text-decoration: none;
-    white-space: nowrap;
-    flex-shrink: 0;
+    cursor: pointer;
+    border: 2px solid transparent;
+    font-size: 0.8rem; /* Fonte geral mais reduzida */
+    letter-spacing: 0.5px;
 }
 
-.btn-contact {
+/* Botão Primário (Hero e CTAs principais) */
+.btn-primary {
     background-color: var(--primary-color);
-    color: var(--text-light);
+    color: white;
+    border-color: var(--primary-color);
 }
 
-.btn-contact:hover {
-    background-color: transparent;
-    color: var(--primary-color);
-    transform: translateY(-2px);
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    color: white; /* Garante que o texto permaneça branco */
+    transform: translateY(-3px);
     box-shadow: var(--shadow-medium);
 }
 
+.btn-primary.hero-cta {
+    padding: 0.9rem 2.2rem; /* Tamanho reduzido */
+    font-size: 1rem; /* Fonte reduzida */
+}
+
+/* Botão Ghost (Navbar) */
 .btn-ghost {
     background-color: transparent;
     color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-radius: 50px; /* Garante o formato pill */
 }
 
 .btn-ghost:hover {
     background-color: var(--primary-color);
-    color: var(--text-light);
+    color: white;
     transform: translateY(-2px);
-    box-shadow: var(--shadow-medium);
 }
 
 /* Fix para evitar que o header pisque */
@@ -488,10 +506,12 @@ li {
 }
 
 .how-help .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
+    max-width: 100%;
+    padding: 0;
+}
+
+.how-help h2 {
+    margin-bottom: 3rem;
 }
 
 .how-help h2 {
@@ -500,10 +520,68 @@ li {
     margin-bottom: 2rem;
 }
 
-.help-content {
+/* Estilos do Carrossel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 2rem 0;
+}
+
+.carousel-container::before,
+.carousel-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 150px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.carousel-container::before {
+    left: 0;
+    background: linear-gradient(to right, var(--background-light), transparent);
+}
+
+.carousel-container::after {
+    right: 0;
+    background: linear-gradient(to left, var(--background-light), transparent);
+}
+
+.carousel-track {
     display: flex;
-    flex-direction: column;
+    gap: 1.5rem;
+    will-change: transform;
+    align-items: center; /* Alinha os itens verticalmente */
+}
+
+.carousel-card {
+    background-color: white;
+    color: var(--text-dark);
+    width: 220px; /* Aumenta a largura */
+    aspect-ratio: 1 / 1; /* Garante a proporção de um quadrado perfeito */
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    font-weight: 500;
+    white-space: normal;
+    box-shadow: var(--shadow-light);
+    transition: all var(--transition-speed) ease;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.85rem; /* Reduz a fonte */
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.carousel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
 }
 
 .help-content p {
@@ -512,35 +590,9 @@ li {
     line-height: 1.8;
 }
 
-.help-image {
-    border-radius: var(--border-radius-large);
-    overflow: hidden;
-    box-shadow: var(--shadow-heavy);
-    position: relative;
-}
 
-.help-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.5s ease;
-}
 
-.help-image:hover img {
-    transform: scale(1.05);
-}
 
-.help-image::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(60, 216, 201, 0.1) 0%, rgba(108, 92, 231, 0.1) 100%);
-    z-index: 1;
-    pointer-events: none;
-}
 
 /* 9. SEÇÃO EXPECTATIVAS
 ----------------------------------------------------------------*/

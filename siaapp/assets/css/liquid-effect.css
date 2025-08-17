@@ -1,0 +1,32 @@
+/* Liquid droplet effect for icons */
+.icon-liquid {
+  --drop: rgba(145,194,120,0.35);
+  --drop2: rgba(145,194,120,0.15);
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(40% 40% at 35% 30%, var(--drop), transparent 70%),
+              radial-gradient(50% 50% at 70% 70%, var(--drop2), transparent 70%);
+  overflow: hidden;
+}
+.icon-liquid i, .icon-liquid svg { width: 22px; height: 22px; color: #0b1b0c; position: relative; z-index: 2; }
+.icon-liquid::before, .icon-liquid::after {
+  content: "";
+  position: absolute;
+  background: radial-gradient(circle at 50% 50%, rgba(145,194,120,0.45), rgba(145,194,120,0.05) 70%);
+  border-radius: 50%;
+  filter: blur(4px);
+  opacity: .9;
+  animation: drip 6s ease-in-out infinite;
+}
+.icon-liquid::before { width: 36px; height: 36px; top: -20%; left: -10%; animation-delay: 0.2s; }
+.icon-liquid::after { width: 28px; height: 28px; bottom: -20%; right: -8%; animation-delay: 2.2s; }
+
+@keyframes drip {
+  0%, 100% { transform: translate(0,0) scale(1); opacity: .8; }
+  50%      { transform: translate(8px, -6px) scale(1.08); opacity: 1; }
+}

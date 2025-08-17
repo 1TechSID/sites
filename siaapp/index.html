@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="SIAAPP - Seu Guia Para Projetos Ambientais de Sucesso!" />
+  <title>SIAAPP • Landing Page</title>
+  <link rel="icon" type="image/png" href="assets/images/Favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/liquid-effect.css" />
+  <script defer src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script defer src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+  <!-- Header / Nav -->
+  <header class="site-header" id="top">
+    <div class="container nav-container">
+      <a href="#top" class="brand">
+        <img src="assets/images/Logo SIAAPP.svg" alt="SIAAPP" class="brand-logo" />
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="#inicio">Início</a>
+        <a href="#mobile">Mobile</a>
+        <a href="#office">Office</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#contato" class="btn btn-brand">Agendar</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="inicio" class="section hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1 class="reveal">Conheça o SIAAPP</h1>
+          <h2 class="reveal">Seu Guia Para Projetos Ambientais<br/>de Sucesso!</h2>
+          <div class="hero-cta reveal">
+            <a href="#contato" class="btn btn-brand btn-lg">AGENDE UMA DEMONSTRAÇÃO</a>
+            <p class="subtext">Automação para decisões ambientais estratégicas</p>
+          </div>
+
+          <p class="lead reveal">Simplifique o processo técnico de inspeção e monitoramento de licenças ambientais, assegurando a conformidade com padrões rigorosos.</p>
+          <p class="reveal">Do campo à central de controle, nossa solução integra coleta, análise e monitoramento ambiental para decisões mais eficientes.</p>
+
+          <ul class="features">
+            <li class="card border-left reveal"><span class="marker">⦿</span> Coletar dados offline e online</li>
+            <li class="card icon-card reveal"><span class="icon-liquid"><i data-lucide="database"></i></span> Gerenciar dados em ambientes complexos</li>
+            <li class="card border-left reveal"><span class="marker">⦿</span> Conexão ágil entre campo e escritório</li>
+            <li class="card icon-card reveal"><span class="icon-liquid"><i data-lucide="list-checks"></i></span> Padronização e organização dos dados</li>
+            <li class="card border-left reveal"><span class="marker">⦿</span> Efetuar inspeções com eficiência</li>
+          </ul>
+        </div>
+        <div class="hero-media reveal">
+          <img src="assets/images/Foto hero.png" alt="SIAAPP - Foto Hero" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Mobile -->
+    <section id="mobile" class="section alt">
+      <div class="container split">
+        <div class="media reveal">
+          <img src="assets/images/siaapp mobile esquerda.png" alt="SIAAPP Mobile" />
+        </div>
+        <div class="copy">
+          <h3 class="reveal">SIAAPP - MOBILE</h3>
+          <ul class="bullets">
+            <li class="reveal">⦿ Aplicativo para coleta de dados em campo, mesmo sem conexão à internet.</li>
+            <li class="reveal">⦿ Sincronização automática com o SIAAPP Office para monitoramento em tempo real.</li>
+            <li class="reveal">⦿ Suporte para registros multimídia: fotos, vídeos e anotações.</li>
+            <li class="reveal">⦿ Captura de dados em diversas áreas: inspeção de obra, qualidade da água, fauna, flora, cubagem, etc.</li>
+            <li class="reveal">⦿ Integração com mapas interativos e visualização de arquivos GeoJSON (pontos, linhas e polígonos).</li>
+            <li class="reveal">⦿ Interface intuitiva e responsiva, garantindo eficiência na coleta de informações.</li>
+            <li class="reveal">⦿ Ideal para monitoramento e análise ambiental, mesmo em condições remotas.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Office -->
+    <section id="office" class="section">
+      <div class="container split reverse">
+        <div class="copy">
+          <h3 class="reveal">SIAAPP - OFFICE</h3>
+          <ul class="bullets">
+            <li class="reveal">⦿ Gerenciamento de clientes e cadastro de empreendimentos. Importação e visualização de arquivos GeoJSON (pontos, linhas e polígonos).</li>
+            <li class="reveal">⦿ Criação e customização de questionários e templates (ex: inspeção de obra).</li>
+            <li class="reveal">⦿ Dashboards analíticos com tabelas, mapas e gráficos customizados.</li>
+            <li class="reveal">⦿ Exportação de dados para Excel e PDF.</li>
+            <li class="reveal">⦿ Sincronização automática com SIAAPP Mobile para dados em tempo real.</li>
+            <li class="reveal">⦿ Interface white label com personalização da identidade visual do cliente.</li>
+            <li class="reveal">⦿ Gerenciamento de usuários e permissões customizadas por empreendimento.</li>
+          </ul>
+        </div>
+        <div class="media reveal">
+          <img src="assets/images/siaapp office laptop.png" alt="SIAAPP Office" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions -->
+    <section id="solutions" class="section alt">
+      <div class="container split">
+        <div class="media reveal">
+          <img src="assets/images/siaapp solutions laptop.png" alt="SIAAPP Solutions" />
+        </div>
+        <div class="copy">
+          <h3 class="reveal">SIAAPP - SOLUTIONS</h3>
+          <div class="solutions-list">
+            <div class="solution-block reveal">
+              <div class="solution-title"><span class="icon-liquid"><i data-lucide="code"></i></span> ⦿ Software House Dedicada:</div>
+              <p>• Desenvolvimento de soluções customizadas que atendem às necessidades específicas do seu empreendimento.</p>
+            </div>
+            <div class="solution-block reveal">
+              <div class="solution-title"><span class="icon-liquid"><i data-lucide="settings"></i></span> ⦿ Customizações Técnicas:</div>
+              <p>• Adaptação e otimização de funcionalidades para maximizar a eficiência dos processos.</p>
+            </div>
+            <div class="solution-block reveal">
+              <div class="solution-title"><span class="icon-liquid"><i data-lucide="cable"></i></span> ⦿ Integrações com Sistemas Externos:</div>
+              <p>• Conexão e interoperabilidade com plataformas e serviços já existentes, ampliando as capacidades do seu ambiente digital.</p>
+            </div>
+            <div class="solution-block reveal">
+              <div class="solution-title"><span class="icon-liquid"><i data-lucide="stack"></i></span> ⦿ Stack Tecnológico Moderno:</div>
+              <p>• Python, Flutter, React, Power BI, entre outros, para garantir soluções robustas e escaláveis.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ideal -->
+    <section class="section">
+      <div class="container narrow">
+        <h3 class="reveal">O SIAAPP é a solução ideal</h3>
+        <p class="reveal">Pensado para atender às demandas específicas de profissionais técnicos e administradores na área ambiental, o SIAAPP é um sistema de inteligência para aprovação de projetos ambientais de forma simples, rápida e prática.</p>
+        <p class="reveal"><strong>Com o SIAAPP você terá:</strong></p>
+        <ul class="benefits">
+          <li class="reveal">Maior agilidade: Reduza o tempo de aprovação de seus projetos em até 50%.</li>
+          <li class="reveal">Maior eficiência: Otimize seus processos e elimine tarefas repetitivas.</li>
+          <li class="reveal">Maior segurança: Tenha acesso a dados precisos e confiáveis para tomar decisões mais assertivas.</li>
+          <li class="reveal">Maior economia: Reduza os custos com mão de obra e materiais.</li>
+          <li class="reveal">Aumento da produtividade: O SIAAPP automatiza tarefas repetitivas e libera tempo para que você se concentre em atividades mais estratégicas.</li>
+          <li class="reveal">Redução de custos: O SIAAPP ajuda a reduzir os custos com mão de obra, materiais e deslocamentos.</li>
+          <li class="reveal">Melhoria na qualidade dos projetos: O SIAAPP garante a coleta de dados precisos e confiáveis, o que contribui para a elaboração de projetos mais consistentes.</li>
+          <li class="reveal">Maior transparência: O SIAAPP promove a transparência no processo de licenciamento ambiental, facilitando o acesso à informação por parte de todos os stakeholders.</li>
+        </ul>
+        <p class="reveal">Somos a solução ideal para empresas que desejam agilizar e simplificar o processo de aprovação de seus projetos ambientais.</p>
+        <p class="reveal">Simplifique o processo técnico de inspeção monitoramento de licenças ambientais, assegurando a conformidade com padrões rigorosos.</p>
+        <p class="reveal">Não perca mais tempo com processos manuais e ineficientes. Adote o SIAAPP e aproveite todos os benefícios que ele oferece.</p>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="section alt">
+      <div class="container split reverse">
+        <div class="copy">
+          <h3 class="reveal">Preencha seus dados e entraremos em contato para agendar sua demonstração.</h3>
+          <form class="contact-form reveal" action="#" method="post" onsubmit="return false;">
+            <div class="form-field">
+              <label for="nome">Nome</label>
+              <input id="nome" name="nome" type="text" placeholder="Digite seu Nome" required />
+            </div>
+            <div class="form-field">
+              <label for="email">E-mail:</label>
+              <input id="email" name="email" type="email" placeholder="Digite seu E-mail" required />
+            </div>
+            <div class="form-field">
+              <label for="telefone">Telefone</label>
+              <input id="telefone" name="telefone" type="tel" placeholder="Digite seu Telefone" />
+            </div>
+            <button class="btn btn-brand" type="submit">Enviar</button>
+          </form>
+
+          <div class="contact-info reveal">
+            <p>Curitiba – PR</p>
+            <p><a href="mailto:contato@siaapp.com.br">contato@siaapp.com.br</a></p>
+            <p>whatsapp: (41) 99886-7424</p>
+          </div>
+        </div>
+        <div class="media reveal">
+          <img src="assets/images/foto contato.png" alt="Contato SIAAPP" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/Logo SIAAPP.svg" alt="SIAAPP" />
+        <p>&copy; <span id="year"></span> SIAAPP. Todos os direitos reservados.</p>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/siaapp" target="_blank" rel="noopener" class="social">
+          <span class="icon-liquid"><i data-lucide="linkedin"></i></span> linkedin company/siaapp
+        </a>
+        <a href="https://www.instagram.com/siaapp_oficial" target="_blank" rel="noopener" class="social">
+          <span class="icon-liquid"><i data-lucide="instagram"></i></span> instagram /siaapp_oficial
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp FAB -->
+  <a href="https://wa.me/5541998867424?text=Ol%C3%A1%20quero%20uma%20demonstra%C3%A7%C3%A3o%20do%20SIAAPP" class="fab-whatsapp" target="_blank" rel="noopener" aria-label="Fale no WhatsApp">
+    <span class="icon-liquid"><i data-lucide="message-circle"></i></span>
+  </a>
+</body>
+</html>

@@ -306,28 +306,6 @@ li {
     margin-bottom: 2rem;
 }
 
-.about-hero {
-    background: linear-gradient(135deg, rgba(60, 216, 201, 0.1) 0%, rgba(108, 92, 231, 0.1) 100%);
-    text-align: center;
-}
-
-.about-hero .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.about-hero h1 {
-    font-size: 3.5rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.about-hero p {
-    font-size: 1.3rem;
-    color: var(--text-medium);
-    font-weight: 300;
-}
-
 .hero-image {
     position: relative;
     border-radius: var(--border-radius-large);
@@ -1046,6 +1024,11 @@ li {
 
 /* 17. UTILITÁRIOS
 ----------------------------------------------------------------*/
+.component-visible {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
 .text-center { text-align: center; }
 .text-left { text-align: left; }
 .text-right { text-align: right; }
@@ -1114,20 +1097,26 @@ li {
 /* 21. ESTILOS PARA PÁGINA SOBRE
 ----------------------------------------------------------------*/
 .about-hero {
-    background: linear-gradient(135deg, rgba(60, 216, 201, 0.1) 0%, rgba(108, 92, 231, 0.1) 100%);
+    background: var(--gradient-primary);
     padding: 8rem 0;
     text-align: center;
 }
 
+.about-hero .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .about-hero h1 {
-    font-size: 3rem;
-    color: var(--text-dark);
+    font-size: 3.5rem;
+    color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
 .about-hero p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--text-medium);
+    font-weight: 300;
 }
 
 .about-section {
@@ -1145,15 +1134,162 @@ li {
 .about-image {
     border-radius: var(--border-radius-large);
     overflow: hidden;
-    box-shadow: var(--shadow-heavy);
+    box-shadow: var(--shadow-medium);
 }
 
 .about-image img {
     width: 100%;
     height: auto;
     display: block;
-    transition: transform 0.5s ease;
 }
+
+.about-text h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.approach-section,
+.values-section,
+.training-section {
+    padding: 5rem 0;
+}
+
+.approach-section {
+    background-color: var(--background-white);
+}
+
+.values-section {
+    background-color: var(--background-light);
+}
+
+.training-section {
+    background-color: var(--background-white);
+}
+
+.approach-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.approach-text h3,
+.approach-techniques h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.technique-list {
+    list-style: none;
+    padding: 0;
+}
+
+.technique-list li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(60, 216, 201, 0.2);
+    position: relative;
+    padding-left: 2rem;
+}
+
+.technique-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.value-card {
+    background: var(--background-white);
+    padding: 2rem;
+    border-radius: var(--border-radius-medium);
+    text-align: center;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+}
+
+.value-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+}
+
+.value-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.value-card h3 {
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.training-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.training-item {
+    background: var(--background-light);
+    padding: 2rem;
+    border-radius: var(--border-radius-medium);
+    border-left: 4px solid var(--primary-color);
+}
+
+.training-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+}
+
+.training-item p {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+/* Responsivo para página sobre */
+@media (max-width: 768px) {
+    .about-content,
+    .approach-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .training-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .about-text h2 {
+        font-size: 2rem;
+    }
+}
+
 
 .about-image:hover img {
     transform: scale(1.05);
@@ -1335,33 +1471,6 @@ li {
     margin-bottom: 0;
 }
 
-/* 21. SEÇÕES ESPECÍFICAS DA PÁGINA SOBRE
-----------------------------------------------------------------*/
-.about-section {
-    padding: 5rem 0;
-    background-color: white;
-}
-
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 4rem;
-    align-items: center;
-}
-
-.about-image {
-    border-radius: var(--border-radius-large);
-    overflow: hidden;
-    box-shadow: var(--shadow-heavy);
-}
-
-.about-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.5s ease;
-}
-
 .about-image:hover img {
     transform: scale(1.05);
 }
@@ -1535,3 +1644,4 @@ li {
     color: var(--text-medium);
     margin-bottom: 0.5rem;
 }
+/* Force refresh */

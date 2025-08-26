@@ -113,7 +113,7 @@ export const BenefitsSection = () => {
             <div className="mb-6">
               <div className="text-6xl font-bold text-brand mb-2">ROI</div>
               <p className="text-xl text-muted-foreground">
-                Retorno sobre investimento comprovado em cada projeto
+                Retorno sobre   investimento comprovado em cada projeto
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">

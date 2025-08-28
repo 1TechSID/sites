@@ -7,7 +7,8 @@ gsap.registerPlugin(ScrollTrigger);
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
   initializeNavigation();
-  // Animations and FAQ will be initialized after sections load
+  initializeFAQ();
+  initializeAnimations();
 });
 
 // Navigation Functionality
@@ -385,12 +386,16 @@ function initializeAnimations() {
 
     // Number counter animation
     const number = stat.querySelector('.roi-stat-number');
-    const finalValue = parseInt(number.textContent.replace(/[^\d]/g, ''));
-    const suffix = number.textContent.replace(/[\d]/g, '');
+    const originalText = number.textContent;
+    const finalValue = parseInt(originalText.replace(/[^\d]/g, ''));
     
-    gsap.set(number, { textContent: '0' + suffix });
+    // Extract prefix (+ or -) and suffix (% or x)
+    const prefix = originalText.match(/^[+-]/) ? originalText.match(/^[+-]/)[0] : '';
+    const suffix = originalText.match(/[%x]$/) ? originalText.match(/[%x]$/)[0] : '';
+    
+    gsap.set(number, { textContent: prefix + '0' + suffix });
     gsap.to(number, {
-      textContent: finalValue + suffix,
+      textContent: prefix + finalValue + suffix,
       duration: 2,
       ease: 'power2.out',
       snap: { textContent: 1 },
@@ -520,6 +525,39 @@ function initializeAnimations() {
 
   // Refresh ScrollTrigger after all animations are set
   ScrollTrigger.refresh();
+}
+
+// FAQ Functionality
+function initializeFAQ() {
+  const faqItems = document.querySelectorAll('.faq-item');
+  
+  faqItems.forEach(item => {
+    const button = item.querySelector('.faq-button');
+    const content = item.querySelector('.faq-content');
+    const icon = item.querySelector('.faq-icon svg');
+    
+    if (button && content) {
+      button.addEventListener('click', () => {
+        const isOpen = item.classList.contains('active');
+        
+        // Close all other items
+        faqItems.forEach(otherItem => {
+          otherItem.classList.remove('active');
+          const otherContent = otherItem.querySelector('.faq-content');
+          const otherIcon = otherItem.querySelector('.faq-icon svg');
+          if (otherContent) otherContent.style.maxHeight = '0';
+          if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+        });
+        
+        // Toggle current item
+        if (!isOpen) {
+          item.classList.add('active');
+          content.style.maxHeight = content.scrollHeight + 'px';
+          if (icon) icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    }
+  });
 }
 
 // Utility function for smooth scrolling

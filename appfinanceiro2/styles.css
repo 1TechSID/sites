@@ -1,0 +1,116 @@
+/* =============================
+   GPS Financeiro - Landing Page
+   Arquivo: styles.css
+   ============================= */
+
+:root {
+  --bg: #0b1220;
+  --surface: #0f172a;
+  --elev: #111827;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --primary: #2563eb;
+  --primary-600: #1d4ed8;
+  --primary-300: #60a5fa;
+  --accent: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --glass: rgba(255, 255, 255, 0.08);
+  --shadow: 0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+* { box-sizing: border-box }
+html, body { height: 100% }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+  background: radial-gradient(1200px 800px at 20% -10%, rgba(37, 99, 235, 0.25), transparent 60%),
+              radial-gradient(1000px 600px at 120% 20%, rgba(96, 165, 250, 0.15), transparent 60%),
+              var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+img { max-width: 100%; display: block }
+
+.container { width: min(1200px, 92%); margin-inline: auto }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  background: linear-gradient(90deg, var(--primary), var(--primary-300));
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: 14px;
+  border: 0;
+  box-shadow: 0 10px 25px rgba(37,99,235,.35);
+  font-weight: 700;
+  letter-spacing: .2px;
+  text-decoration: none;
+  transition: transform .2s ease, filter .2s ease, box-shadow .2s ease;
+}
+.btn:hover { transform: translateY(-2px); filter: brightness(1.05); box-shadow: 0 14px 35px rgba(37,99,235,.42) }
+.btn:active { transform: translateY(0) scale(.98) }
+
+.header {
+  position: sticky; top: 0; z-index: 40;
+  background: rgba(11,18,32,.6);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(148,163,184,.12);
+}
+.header-inner { display:flex; align-items:center; justify-content:space-between; padding: 16px 0 }
+.brand { display:flex; align-items:center; gap:.75rem; font-weight:800; letter-spacing:.3px }
+.brand-badge { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), var(--accent)); display:grid; place-items:center; box-shadow: var(--shadow) }
+.brand-badge svg { width: 22px; height: 22px; fill: #fff }
+
+.nav-actions { display:flex; align-items:center; gap:.8rem }
+.link-muted { color: var(--muted); text-decoration:none }
+.link-muted:hover { color: #cbd5e1 }
+
+.hero { padding: 72px 0 32px }
+.hero-grid { display:grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center }
+.hero h1 { font-size: clamp(28px, 4vw, 44px); line-height: 1.12; margin: 0 0 18px; letter-spacing: -.3px }
+.hero p.lead { font-size: clamp(16px, 1.4vw, 20px); color: var(--muted); margin: 0 0 24px }
+.hero-cta { display:flex; gap: 12px; flex-wrap: wrap }
+.hero-card { background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border: 1px solid rgba(148,163,184,.16); padding: 16px; border-radius: 18px; box-shadow: var(--shadow) }
+.phone-mock { filter: drop-shadow(0 40px 80px rgba(0,0,0,.6)) }
+
+.section { padding: 80px 0 }
+.section h2 { font-size: clamp(22px, 2.6vw, 34px); margin: 0 0 12px }
+.section p { color: var(--muted); margin: 0 0 10px }
+
+.kv { display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 20px }
+.kv .card { background: var(--surface); border: 1px solid rgba(148,163,184,.12); border-radius: 16px; padding: 18px; box-shadow: var(--shadow) }
+.kv .title { color: #cbd5e1; font-weight: 700; margin-bottom: 8px }
+.kv .value { font-size: 28px; font-weight: 800 }
+
+.grid-2 { display:grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start }
+.grid-3 { display:grid; grid-template-columns: repeat(3, 1fr); gap: 20px }
+.card { background: var(--surface); border: 1px solid rgba(148,163,184,.12); border-radius: 16px; padding: 22px; box-shadow: var(--shadow) }
+.card h3 { margin: 0 0 8px }
+.muted { color: var(--muted) }
+
+.badge { display:inline-flex; align-items:center; gap:.5rem; background: rgba(37,99,235,.16); color: #c7d2fe; border: 1px solid rgba(99,102,241,.25); padding: 6px 10px; border-radius: 999px; font-weight: 700; font-size: 12px; letter-spacing:.3px }
+.icon { width: 20px; height: 20px; display:inline-flex; align-items:center; justify-content:center }
+
+.testimonials { display:grid; grid-template-columns: 1.1fr .9fr; gap: 24px; align-items: start }
+.quote { font-size: 18px; color: #dbeafe }
+.avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #60a5fa, #22c55e); box-shadow: var(--shadow) }
+
+.timeline { position: relative; padding-left: 24px }
+.timeline::before { content: ""; position: absolute; left: 6px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, #334155, transparent) }
+.timeline .step { position: relative; margin: 14px 0; padding-left: 18px }
+.timeline .step::before { content: ""; position: absolute; left: -2px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,.25) }
+
+.faq details { background: var(--surface); border: 1px solid rgba(148,163,184,.12); border-radius: 14px; margin: 10px 0; padding: 14px 16px }
+.faq summary { cursor: pointer; font-weight: 700 }
+
+.footer { padding: 40px 0; border-top: 1px solid rgba(148,163,184,.12); color: var(--muted) }
+.footer .grid { display:grid; grid-template-columns: 1fr auto; gap: 20px; align-items:center }
+
+.small { font-size: 12px }
+
+@media (max-width: 960px) {
+  .hero-grid, .testimonials { grid-template-columns: 1fr }
+  .grid-2, .grid-3 { grid-template-columns: 1fr }
+}

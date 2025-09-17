@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pijama de Colorir Bobbie Goods — Substitua telas por criatividade | Puro Conforto</title>
+    <meta name="description" content="Transforme tempo de tela em criatividade! Pijama de Colorir Bobbie Goods + 12 canetinhas laváveis. Seguro, educativo e divertido. Frete grátis Brasil.">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Pijama de Colorir Bobbie Goods — Substitua telas por criatividade">
+    <meta property="og:description" content="Transforme tempo de tela em criatividade! Pijama de Colorir + 12 canetinhas laváveis. Seguro e educativo.">
+    <meta property="og:image" content="./assets/images/secao 1 image 1.png">
+    <meta property="og:url" content="https://bobbiegoods.com.br/pijama-colorir-bobbie-goods">
+    <meta property="og:type" content="product">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <style>
+        /* Force benefits section styling with new colors */
+        .benefits-grid-updated {
+            display: grid !important;
+            gap: 2rem !important;
+            grid-template-columns: 1fr !important;
+            align-items: stretch !important;
+        }
+        .benefit-card {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            min-height: 320px !important;
+            height: 100% !important;
+        }
+        .benefit-icon {
+            height: 120px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            margin-bottom: 1.5rem !important;
+        }
+        .benefit-icon img {
+            max-width: 100px !important;
+            max-height: 100px !important;
+            object-fit: contain !important;
+        }
+        .benefit-text {
+            max-width: 200px !important;
+            flex-grow: 1 !important;
+            display: flex !important;
+            align-items: center !important;
+        }
+        /* Progress bar with primary blue */
+        .scroll-progress {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 0% !important;
+            height: 3px !important;
+            background: #4DA6FF !important;
+            z-index: 9999 !important;
+            transition: width 0.1s ease !important;
+        }
+        /* Fix image flickering */
+        img {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: none !important;
+            transition: none !important;
+        }
+        .hero-img, .hero-img-secondary, .hero-img-kit {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        @media (min-width: 768px) {
+            .benefits-grid-updated {
+                grid-template-columns: repeat(3, 1fr) !important;
+            }
+            .benefit-card {
+                min-height: 350px !important;
+            }
+        }
+    </style>
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <!-- Facebook Pixel -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'YOUR_PIXEL_ID');
+        fbq('track', 'PageView');
+    </script>
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Pijama de Colorir Bobbie Goods",
+        "description": "Pijama de colorir com 12 canetinhas laváveis à base d'água. Seguro, educativo e divertido para crianças.",
+        "brand": {
+            "@type": "Brand",
+            "name": "Bobbie Goods"
+        },
+        "offers": [
+            {
+                "@type": "Offer",
+                "name": "1 Pijama",
+                "price": "179.90",
+                "priceCurrency": "BRL",
+                "availability": "https://schema.org/InStock",
+                "validThrough": "2024-10-31"
+            },
+            {
+                "@type": "Offer",
+                "name": "3 Pijamas - Melhor Compra",
+                "price": "358.80",
+                "priceCurrency": "BRL",
+                "availability": "https://schema.org/InStock",
+                "validThrough": "2024-10-31"
+            },
+            {
+                "@type": "Offer",
+                "name": "5 Pijamas - Economia Máxima",
+                "price": "539.70",
+                "priceCurrency": "BRL",
+                "availability": "https://schema.org/InStock",
+                "validThrough": "2024-10-31"
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Top Bar Sticky -->
+    <div class="top-bar" id="top-bar">
+        <div class="container">
+            <span class="top-bar-text">Frete grátis para todo o Brasil • Desconto aplicado automaticamente no carrinho</span>
+            <a href="#pricing" class="top-bar-cta">Comprar agora</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Cansado de ver seu filho colado no celular?</h1>
+                <h2 class="hero-subtitle">Transforme tempo de tela em criatividade: Pijama de Colorir Bobbie Goods + 12 canetinhas laváveis.</h2>
+                
+                <div class="hero-bullets">
+                    <span class="bullet-item">Pintar</span>
+                    <span class="bullet-separator">•</span>
+                    <span class="bullet-item">Lavar</span>
+                    <span class="bullet-separator">•</span>
+                    <span class="bullet-item">Repetir</span>
+                </div>
+                <p class="hero-tagline">Seguro, educativo e divertido.</p>
+                
+                <div class="hero-timer">
+                    <p class="timer-text">Seu preço e brinde reservados por: <span id="bobbie-hero-timer">08:00</span></p>
+                </div>
+                
+                <div class="hero-pricing-mini">
+                    <div class="mini-option">1 por R$ 179,90</div>
+                    <div class="mini-option featured">3 por R$ 358,80</div>
+                    <div class="mini-option">5 por R$ 539,70</div>
+                </div>
+                
+                <a href="#pricing" class="cta-primary" id="hero-cta">Garantir promoção do Dia das Crianças</a>
+                
+                <p class="hero-microcopy">Desconto aplicado automaticamente no carrinho • Frete grátis para todo o Brasil</p>
+            </div>
+            
+            <div class="hero-image">
+                <img src="./assets/images/secao 1 image 1.png" alt="Criança usando pijama de colorir Bobbie Goods" class="hero-img">
+                <img src="./assets/images/secao 1 image 2.png" alt="Pijama de colorir com canetinhas" class="hero-img-secondary">
+                <img src="./assets/images/secao 1 image 3.png" alt="Kit completo Bobbie Goods" class="hero-img-kit">
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Bar -->
+    <div class="social-proof-bar">
+        <div class="container">
+            <p class="social-proof-text">Mais de 1.500 famílias felizes</p>
+            <div class="toast-notification" id="toast-notification">
+                <span class="toast-text">Joana, SP — acabou de comprar 1 kit</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <h2 class="section-title">Por que os pais escolhem Bobbie Goods</h2>
+            
+            <div class="benefits-grid benefits-grid-updated">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <img src="./assets/images/secao 3 image 1.png" alt="Menos telas, mais criatividade">
+                    </div>
+                    <h3 class="benefit-title">Menos telas, mais criatividade</h3>
+                    <p class="benefit-text">Substitui tempo passivo por criação ativa</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <img src="./assets/images/secao 3 image 2.png" alt="Seguro e lavável">
+                    </div>
+                    <h3 class="benefit-title">Seguro & lavável</h3>
+                    <p class="benefit-text">Canetinhas à base d'água, pijama fica limpo</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <img src="./assets/images/secao 2 image 3.png" alt="Aprendizado e desenvolvimento">
+                    </div>
+                    <h3 class="benefit-title">Aprendizado</h3>
+                    <p class="benefit-text">Desenvolve coordenação e imaginação</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Como funciona</h2>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <img src="./assets/images/secao 2 image 1.png" alt="Abrir kit" class="step-image">
+                    <h3 class="step-title">Abrir kit</h3>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <img src="./assets/images/secao 2 image 2.png" alt="Pintar" class="step-image">
+                    <h3 class="step-title">Pintar</h3>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <img src="./assets/images/secao 4 image 1.png" alt="Lavar e repintar" class="step-image">
+                    <h3 class="step-title">Lavar e repintar</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">O que os pais estão dizendo</h2>
+            
+            <div class="testimonials-carousel">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Minha filha parou de pedir o celular! Agora ela quer pintar o pijama todos os dias."</p>
+                    <div class="testimonial-author">
+                        <strong>Maria Silva</strong>
+                        <span>São Paulo, SP</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Produto incrível! As canetinhas saem facilmente na lavagem e o pijama fica como novo."</p>
+                    <div class="testimonial-author">
+                        <strong>Ana Costa</strong>
+                        <span>Rio de Janeiro, RJ</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Comprei 3 para os meus filhos. Eles adoraram e eu ganhei mais tempo livre!"</p>
+                    <div class="testimonial-author">
+                        <strong>Carlos Oliveira</strong>
+                        <span>Belo Horizonte, MG</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Escolha seu kit</h2>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="pricing-title">1 pijama</h3>
+                    <div class="pricing-price">R$ 179,90</div>
+                    <div class="pricing-per-unit">R$ 179,90 por unidade</div>
+                    <a href="#" class="pricing-cta" data-variant="1">Comprar 1</a>
+                    <p class="pricing-microcopy">Desconto aplicado automaticamente no carrinho • Frete grátis Brasil</p>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Melhor Compra</div>
+                    <h3 class="pricing-title">3 pijamas</h3>
+                    <div class="pricing-price">R$ 358,80</div>
+                    <div class="pricing-per-unit">R$ 119,60 por unidade</div>
+                    <div class="pricing-savings">Economize R$ 180,90 (≈34%)</div>
+                    <a href="#" class="pricing-cta" data-variant="3">Levar o kit 3 (Melhor Compra)</a>
+                    <p class="pricing-microcopy">Desconto aplicado automaticamente no carrinho • Frete grátis Brasil</p>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-badge">Economia Máxima</div>
+                    <h3 class="pricing-title">5 pijamas</h3>
+                    <div class="pricing-price">R$ 539,70</div>
+                    <div class="pricing-per-unit">R$ 107,94 por unidade</div>
+                    <div class="pricing-savings">Economize R$ 359,80 (≈40%)</div>
+                    <a href="#" class="pricing-cta" data-variant="5">Levar o kit 5</a>
+                    <p class="pricing-microcopy">Desconto aplicado automaticamente no carrinho • Frete grátis Brasil</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Safety -->
+    <section class="product-safety" id="product-safety">
+        <div class="container">
+            <h2 class="section-title">Seguro para crianças — canetinhas à base d'água</h2>
+            
+            <div class="safety-content">
+                <div class="safety-text">
+                    <ul class="safety-list">
+                        <li>Composição: Suede Premium — 95% Poliéster, 5% Poliamida</li>
+                        <li>Canetinhas atóxicas à base d'água</li>
+                        <li>Testado e aprovado para uso infantil</li>
+                    </ul>
+                    <a href="#" class="safety-link">Guia de cuidados e lavagem</a>
+                </div>
+                <div class="safety-image">
+                    <img src="./assets/images/secao 4 image 2.png" alt="Produto seguro para crianças">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-button">
+                        <span>As canetinhas mancham?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <p>Não! As canetinhas são à base d'água e saem completamente na lavagem. O pijama volta a ficar como novo.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-button">
+                        <span>Como lavar o pijama?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <p>Lave normalmente na máquina com água fria. As tintas saem completamente e o pijama fica pronto para uma nova arte.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-button">
+                        <span>Qual o prazo de entrega?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <p>Entregamos em todo o Brasil em até 7 dias úteis. Frete grátis para todas as regiões.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-button">
+                        <span>Como funciona o desconto?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <p>O desconto é aplicado automaticamente no carrinho. Não precisa de cupom ou código promocional.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="final-cta">
+        <div class="container">
+            <div class="final-cta-content">
+                <h2 class="final-cta-title">Últimos minutos!</h2>
+                <div class="final-timer">
+                    <p class="timer-text">Tempo restante: <span id="final-timer">08:00</span></p>
+                </div>
+                <a href="#pricing" class="cta-primary">Garantir minha promoção agora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sticky Buy Bar -->
+    <div class="sticky-buybar" id="sticky-buybar">
+        <div class="buybar-content">
+            <div class="buybar-product">
+                <img src="./assets/images/secao 1 image 2.png" alt="Pijama Bobbie Goods" class="buybar-image">
+                <div class="buybar-info">
+                    <span class="buybar-title">Kit 3 Pijamas</span>
+                    <span class="buybar-price">R$ 358,80</span>
+                </div>
+            </div>
+            <a href="#pricing" class="buybar-cta">Comprar</a>
+        </div>
+    </div>
+
+    <!-- Exit Intent Modal -->
+    <div class="exit-modal" id="exit-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <h3 class="modal-title">Espere!</h3>
+            <p class="modal-text">Leve 3 pagando 2 — desconto automático. Oferta relâmpago.</p>
+            <a href="#pricing" class="modal-cta">Aproveitar oferta</a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

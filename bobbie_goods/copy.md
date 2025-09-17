@@ -13,15 +13,15 @@ Tracking: GA4 + FB Pixel + eventos (view_item, add_to_cart, begin_checkout, purc
 
 DIRETRIZES DE DESIGN & TOM
 Paleta: 
-#C8F0FC azul claro
-#F6CFE7 rosa claro
-#DAF4D5 verde claro
-#EAD4FF roxo claro
-#FFFED9 amarelo claro
+#4DA6FF azul principal (10% - CTAs e destaques)
+#78D6C6 verde menta (30% - seções e elementos secundários)
+#FFD166 amarelo suave (30% - backgrounds e cards)
+#CDB4F4 lilás claro (30% - alternância de seções)
+Cores neutras: branco, cinza claro para textos
 
 Tipografia: Sans serif legível (títulos grandes, corpo confortável).
 
-Imagens: use as imagens fornecidas em assets/images
+Imagens: use as imagens fornecidas em bobbie_goods/assets/images
 
 Mobile-first: botões grandes, CTAs touch-friendly (≥44px).
 

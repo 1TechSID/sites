@@ -3,13 +3,8 @@ Landing Page — Pijama de Colorir Bobbie Goods
 Objetivo: criar uma landing page de alta conversão (mobile-first) que atenda a campanha “Dia das Crianças”, focada na dor: criança colada no celular. A página deve integrar catálogo Shopify (produtos/variants) e redirecionar ao checkout CartPanda. Timer de 8 minutos inicia no carregamento da página (apenas gatilho psicológico — não bloqueia compra).
 
 Usar apenas HTML, CSS e JS
+Separar em componentes e não misturar html com css e js
 Usar GSAP para animações sutis que engajam o usuário
-
-
-
-SEO: meta tags, JSON-LD Product/Offer/FAQ, OG tags, alt texts, sitemap, performance.
-
-Tracking: GA4 + FB Pixel + eventos (view_item, add_to_cart, begin_checkout, purchase, timer_start, timer_cta_click).
 
 DIRETRIZES DE DESIGN & TOM
 Paleta: 
@@ -20,24 +15,17 @@ Paleta:
 Cores neutras: branco, cinza claro para textos
 
 Tipografia: Sans serif legível (títulos grandes, corpo confortável).
-
-Imagens: use as imagens fornecidas em bobbie_goods/assets/images
-
 Mobile-first: botões grandes, CTAs touch-friendly (≥44px).
 
-ESTRUTURA / SESSÕES (conteúdo pronto para colar)
+ESTRUTURA / SESSÕES
 Top bar (sticky)
 Texto: Frete grátis para todo o Brasil • Desconto aplicado automaticamente no carrinho
-
 CTA pequeno: Comprar agora (ancora para Pricing)
 
 HERO (first view)
 H1: Cansado de ver seu filho colado no celular?
-
 H2: Transforme tempo de tela em criatividade: Pijama de Colorir Bobbie Goods + 12 canetinhas laváveis.
-
 Bullets: Pintar • Lavar • Repetir — Seguro, educativo e divertido.
-
 Timer (visível): Seu preço e brinde reservados por: <span id="bobbie-hero-timer">08:00</span> (inicia no page-load).
 
 Preço compacto (mini-strip): mostre as 3 opções resumidas.

@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Gift, ShoppingCart, Heart, Truck, Star, ArrowRight } from 'lucide-react';
+import { Gift, ShoppingCart, Heart, Star, ArrowRight } from 'lucide-react';
+import { addToCart } from '../utils/shopify';
 
 export const CTASection: React.FC = () => {
   const title = 'Oferta Especial de Dia das Crianças';
@@ -10,20 +11,18 @@ export const CTASection: React.FC = () => {
     {
       icon: <Gift className="w-8 h-8" />,
       title: 'Compre 2 e Leve 3',
-      description: 'Promoção especial para famílias',
-      highlight: 'Economia de 33%'
+      description: 'Ótimo para famílias',
+      highlight: 'Economia de 33%',
+      price: 'R$ 179,90',
+      originalPrice: 'R$ 269,70'
     },
     {
       icon: <Heart className="w-8 h-8" />,
       title: 'Compre 3 e Leve 5',
-      description: 'Ideal para grupos de amigos',
-      highlight: 'Economia de 40%'
-    },
-    {
-      icon: <Truck className="w-8 h-8" />,
-      title: 'Frete Grátis',
-      description: 'Para todo o Brasil',
-      highlight: 'Sem taxa adicional'
+      description: 'Para todos na família',
+      highlight: 'Economia de 40%',
+      price: 'R$ 224,90',
+      originalPrice: 'R$ 374,50'
     },
   ];
 
@@ -34,7 +33,7 @@ export const CTASection: React.FC = () => {
     <section
       id="ofertas"
       ref={containerRef}
-      className="py-20 px-6 bg-gradient-to-br from-yellow-50 to-orange-50"
+      className="py-20 px-6 bg-gradient-to-br from-blue-50 to-blue-100"
     >
       <div className="container mx-auto max-w-6xl">
         <motion.div
@@ -62,7 +61,7 @@ export const CTASection: React.FC = () => {
           
           {/* Special highlight */}
           <motion.div
-            className="inline-flex items-center gap-2 bg-yellow-400 text-gray-900 px-6 py-3 rounded-full font-bold text-lg"
+            className="inline-flex items-center gap-2 bg-[#4DA6FF] text-white px-6 py-3 rounded-full font-bold text-lg"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.6 }}
@@ -75,7 +74,7 @@ export const CTASection: React.FC = () => {
 
         {/* Offers Grid */}
         <motion.div
-          className="grid md:grid-cols-3 gap-8 mb-16"
+          className="grid md:grid-cols-2 gap-8 mb-16 justify-center max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.8 }}
@@ -83,23 +82,40 @@ export const CTASection: React.FC = () => {
           {offers.map((offer, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-yellow-400"
+              className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-[#78D6C6]"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 1.0 + index * 0.1 }}
             >
-              <div className="w-20 h-20 bg-gradient-to-r from-yellow-400 to-orange-500 text-white rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-gradient-to-r from-[#78D6C6] to-[#4ADE80] text-white rounded-full flex items-center justify-center mx-auto mb-6">
                 {offer.icon}
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">
                 {offer.title}
               </h3>
+              <div className="mb-4">
+                <div className="text-3xl font-bold text-[#4DA6FF] mb-1">
+                  {offer.price}
+                </div>
+                <div className="text-lg text-gray-500 line-through">
+                  {offer.originalPrice}
+                </div>
+              </div>
               <p className="text-gray-600 mb-4">
                 {offer.description}
               </p>
-              <div className="bg-yellow-100 text-yellow-800 px-4 py-2 rounded-lg font-semibold">
+              <div className="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg font-semibold mb-4">
                 {offer.highlight}
               </div>
+              <motion.button
+                onClick={() => addToCart()}
+                className="w-full flex items-center justify-center px-6 py-3 bg-gradient-to-r from-[#78D6C6] to-[#4ADE80] text-white rounded-lg shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer font-semibold"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <ShoppingCart className="w-5 h-5 mr-2" />
+                Comprar Agora
+              </motion.button>
             </motion.div>
           ))}
         </motion.div>
@@ -121,6 +137,7 @@ export const CTASection: React.FC = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <motion.button
+                onClick={() => addToCart()}
                 className="flex items-center justify-center px-8 py-4 bg-white text-blue-600 rounded-lg shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer font-bold text-lg"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -131,7 +148,7 @@ export const CTASection: React.FC = () => {
               </motion.button>
               
               <motion.button
-                className="flex items-center justify-center px-6 py-4 border-2 border-white bg-transparent text-white rounded-lg hover:bg-white hover:text-purple-600 transition-all duration-200 cursor-pointer font-semibold"
+                className="flex items-center justify-center px-6 py-4 border-2 border-white bg-transparent text-white rounded-lg hover:bg-white hover:text-blue-600 transition-all duration-200 cursor-pointer font-semibold"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

@@ -1,11 +1,17 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ArrowRight, ChevronDown, Heart, Star } from 'lucide-react';
 import heroImage from '../assets/images/Hero.png';
+import { addToCart, initShopifyProductButton } from '../utils/shopify';
 
 export const HeroSection: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true });
+
+  useEffect(() => {
+    // Inicializar botão Shopify quando componente montar
+    initShopifyProductButton();
+  }, []);
 
   return (
     <section
@@ -82,13 +88,13 @@ export const HeroSection: React.FC = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 1.0 }}
             >
-              <motion.a
-                href="#ofertas"
+              <motion.button
+                onClick={() => addToCart()}
                 className="flex items-center justify-center px-8 py-4 bg-gradient-to-r from-[#4DA6FF] to-[#3B82F6] text-white rounded-lg shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer font-semibold text-lg"
               >
                 <span className="mr-2">Ver Ofertas Especiais</span>
                 <ArrowRight className="w-5 h-5" />
-              </motion.a>
+              </motion.button>
 
               <motion.a
                 href="#caracteristicas"

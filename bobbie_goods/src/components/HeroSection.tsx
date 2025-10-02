@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ArrowRight, ChevronDown, Heart, Star } from 'lucide-react';
+import heroImage from '../assets/images/Hero.png';
 
 export const HeroSection: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -107,7 +108,7 @@ export const HeroSection: React.FC = () => {
           >
             <div className="relative">
               <img
-                src="https://m.media-amazon.com/images/I/81xWl+tU2EL._UY1000_.jpg"
+                src={heroImage}
                 alt="Pijama de colorir Bobbie Goods - criança feliz colorindo"
                 className="w-full h-auto rounded-2xl shadow-2xl"
               />

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import logo from '../assets/images/Logo.png';
 
 export const Header: React.FC = () => {
-  const logoText = 'Bobbie Goods';
   const navigation = [
     { name: 'Início', href: '#' },
     { name: 'Características', href: '#caracteristicas' },
@@ -36,9 +36,9 @@ export const Header: React.FC = () => {
       <nav className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <motion.div
-          className="font-bold text-2xl text-zinc-900 hover:scale-110 transition-transform duration-200"
+          className="hover:scale-110 transition-transform duration-200"
         >
-          {logoText}
+          <img src={logo} alt="Bobbie Goods" className="h-12 w-auto" />
         </motion.div>
 
         {/* Desktop Navigation */}

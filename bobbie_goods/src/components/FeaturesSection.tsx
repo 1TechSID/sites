@@ -1,6 +1,10 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Brush, Shirt, Shield, Sparkles } from 'lucide-react';
+import lavar2 from '../assets/images/como funciona 2 - lavar.png';
+import lavar3 from '../assets/images/como funciona 3 - repintar.png';
+import secao4 from '../assets/images/secao 4 image 2.png';
+import lavar1 from '../assets/images/como funciona 1 - pintar.png';
 
 export const FeaturesSection: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -17,25 +21,25 @@ export const FeaturesSection: React.FC = () => {
       icon: <Brush className="w-8 h-8" />,
       title: 'Fácil de Lavar',
       description: 'Pode ser lavado na máquina ou na pia. As cores saem completamente, permitindo colorir infinitas vezes.',
-      image: 'https://www.howwemontessori.com/.a/6a0147e1d4f40f970b0263e95feafb200b-pi'
+      image: lavar2
     },
     {
       icon: <Shirt className="w-8 h-8" />,
       title: 'Costura Reforçada',
       description: 'Tecido suede premium com 95% poliéster e 5% poliamida. Resistente e confortável para o uso diário.',
-      image: 'https://tinytreasurestore.in/cdn/shop/files/unicornnosquiggles21_1800x1800_c207c065-76c1-4de9-b990-1b8564aead22.jpg'
+      image: lavar3
     },
     {
       icon: <Shield className="w-8 h-8" />,
       title: 'Tecido Premium',
       description: 'Material de alta qualidade, macio ao toque e seguro para crianças. Não desbota e mantém a forma.',
-      image: 'https://m.media-amazon.com/images/I/81Vr7mnX7VL._UY1000_.jpg'
+      image: secao4
     },
     {
       icon: <Sparkles className="w-8 h-8" />,
       title: 'Criatividade Infinita',
       description: 'Cada unidade acompanha 12 canetinhas de brinde. Pinte, lave e repinte quantas vezes quiser!',
-      image: 'https://m.media-amazon.com/images/I/91J5N-NPjBL._UY1000_.jpg'
+      image: lavar1
     },
   ];
 

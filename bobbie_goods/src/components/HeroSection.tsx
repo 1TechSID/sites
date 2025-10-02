@@ -10,7 +10,7 @@ export const HeroSection: React.FC = () => {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden bg-gradient-to-br from-pink-50 to-purple-50"
+      className="relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden bg-white"
     >
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -22,7 +22,7 @@ export const HeroSection: React.FC = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
             <motion.div
-              className="inline-flex items-center gap-2 bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm font-medium"
+              className="inline-flex items-center gap-2 bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-medium"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -38,7 +38,7 @@ export const HeroSection: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               Pijamas de Colorir{' '}
-              <span className="bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#4DA6FF] to-[#3B82F6] bg-clip-text text-transparent">
                 Bobbie Goods
               </span>
             </motion.h1>
@@ -84,7 +84,7 @@ export const HeroSection: React.FC = () => {
             >
               <motion.a
                 href="#ofertas"
-                className="flex items-center justify-center px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-lg shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer font-semibold text-lg"
+                className="flex items-center justify-center px-8 py-4 bg-gradient-to-r from-[#4DA6FF] to-[#3B82F6] text-white rounded-lg shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer font-semibold text-lg"
               >
                 <span className="mr-2">Ver Ofertas Especiais</span>
                 <ArrowRight className="w-5 h-5" />

@@ -1,12 +1,17 @@
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { ChevronDown, ShoppingCart, Truck, Palette } from 'lucide-react';
+import { ChevronDown, PenTool, Truck, Palette, Shield, Award, Droplets, Ruler, Percent } from 'lucide-react';
 
 export const FAQSection: React.FC = () => {
   const title = 'Perguntas Frequentes';
   const description = 'Esclareça suas dúvidas sobre os pijamas de colorir Bobbie Goods.';
   
   const faqs = [
+    {
+      question: 'Como funciona a promoção "Compre 2 Leve 3"?',
+      answer: 'É muito simples! Adicione 2 pijamas ao carrinho e automaticamente você receberá o 3º pijama de graça. O desconto é aplicado automaticamente no checkout. Para a promoção "Compre 3 Leve 5", funciona da mesma forma.',
+      icon: <Percent className="w-5 h-5" />
+    },
     {
       question: 'Como funciona o sistema de colorir e lavar?',
       answer: 'Os pijamas Bobbie Goods são feitos com tecido especial que permite colorir com canetinhas para tecido. Depois de brincar, é só lavar na máquina ou na pia que as cores saem completamente, deixando o pijama pronto para uma nova sessão de criatividade!',
@@ -15,7 +20,7 @@ export const FAQSection: React.FC = () => {
     {
       question: 'As canetinhas estão incluídas?',
       answer: 'Sim! Cada pijama Bobbie Goods vem com um kit completo de 12 canetinhas para tecido de cores variadas. São canetinhas de alta qualidade, laváveis e seguras para crianças.',
-      icon: <ShoppingCart className="w-5 h-5" />
+      icon: <PenTool className="w-5 h-5" />
     },
     {
       question: 'Qual é o prazo de entrega?',
@@ -25,27 +30,22 @@ export const FAQSection: React.FC = () => {
     {
       question: 'O tecido é seguro para crianças?',
       answer: 'Absolutamente! Nossos pijamas são feitos com tecido suede premium (95% poliéster e 5% poliamida), hipoalergênico e seguro para peles sensíveis. Todas as costuras são reforçadas para maior durabilidade.',
-      icon: <ShoppingCart className="w-5 h-5" />
+      icon: <Shield className="w-5 h-5" />
     },
     {
       question: 'Como funciona a garantia?',
       answer: 'Oferecemos garantia de satisfação total! Se você não ficar completamente satisfeito com seu pijama Bobbie Goods, devolvemos seu dinheiro em até 30 dias após a compra, sem complicações.',
-      icon: <ChevronDown className="w-5 h-5" />
+      icon: <Award className="w-5 h-5" />
     },
     {
       question: 'Posso lavar na máquina de lavar?',
       answer: 'Sim! Os pijamas podem ser lavados normalmente na máquina de lavar com água fria ou morna. As cores das canetinhas saem completamente, deixando o pijama como novo para colorir novamente.',
-      icon: <Palette className="w-5 h-5" />
+      icon: <Droplets className="w-5 h-5" />
     },
     {
       question: 'Quais tamanhos estão disponíveis?',
       answer: 'Nossos pijamas estão disponíveis nos tamanhos P, M, G e GG, atendendo crianças de 2 a 12 anos. Consulte nossa tabela de medidas para escolher o tamanho ideal.',
-      icon: <ShoppingCart className="w-5 h-5" />
-    },
-    {
-      question: 'Como funciona a promoção "Compre 2 Leve 3"?',
-      answer: 'É muito simples! Adicione 2 pijamas ao carrinho e automaticamente você receberá o 3º pijama de graça. O desconto é aplicado automaticamente no checkout. Para a promoção "Compre 3 Leve 5", funciona da mesma forma.',
-      icon: <Truck className="w-5 h-5" />
+      icon: <Ruler className="w-5 h-5" />
     },
   ];
 

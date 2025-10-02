@@ -111,7 +111,7 @@ export const CTASection: React.FC = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1.4 }}
         >
-          <div className="bg-gradient-to-r from-pink-500 to-purple-600 rounded-2xl p-8 text-white">
+          <div className="bg-gradient-to-r from-[#4DA6FF] to-[#3B82F6] rounded-2xl p-8 text-white">
             <h3 className="text-3xl font-bold mb-4">
               Desconto Automático no Carrinho
             </h3>
@@ -121,7 +121,7 @@ export const CTASection: React.FC = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <motion.button
-                className="flex items-center justify-center px-8 py-4 bg-white text-purple-600 rounded-lg shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer font-bold text-lg"
+                className="flex items-center justify-center px-8 py-4 bg-white text-blue-600 rounded-lg shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer font-bold text-lg"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

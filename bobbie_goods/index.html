@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/src/assets/images/Favicon.png" />
+
+    <!-- SEO Meta Tags -->
+    <title>Pijamas de Colorir Bobbie Goods - Criatividade e Diversão em Família</title>
+    <meta name="description" content="Pijamas de colorir Bobbie Goods: estimule a criatividade das crianças! Tecido especial permite pintar, lavar e repintar infinitas vezes. Seguro, confortável e educativo. Compre agora!" />
+    <meta name="keywords" content="pijamas de colorir, brinquedos educativos, criatividade infantil, pijamas laváveis, brinquedos reutilizáveis, presentes para crianças, atividades em família" />
+    <meta name="author" content="Bobbie Goods" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bobbiegoods.com.br/" />
+    <meta property="og:title" content="Pijamas de Colorir Bobbie Goods - Criatividade Infinita" />
+    <meta property="og:description" content="Pijamas especiais que permitem colorir, lavar e repintar! Estimule a criatividade das crianças com atividades divertidas e educativas." />
+    <meta property="og:image" content="/src/assets/images/Hero.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://bobbiegoods.com.br/" />
+    <meta property="twitter:title" content="Pijamas de Colorir Bobbie Goods" />
+    <meta property="twitter:description" content="Pijamas especiais que permitem colorir, lavar e repintar! Estimule a criatividade das crianças." />
+    <meta property="twitter:image" content="/src/assets/images/Hero.png" />
+
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#4DA6FF" />
+    <meta name="msapplication-TileColor" content="#4DA6FF" />
+    <link rel="canonical" href="https://bobbiegoods.com.br/" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Pijamas de Colorir Bobbie Goods",
+      "description": "Pijamas especiais feitos com tecido que permite colorir com canetinhas, lavar na máquina e repintar infinitas vezes. Estimula a criatividade infantil.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Bobbie Goods"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "BRL",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "Bobbie Goods"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "127"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Shopify Buy Button SDK -->
+    <script type="text/javascript">
+      (function () {
+        var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+        if (window.ShopifyBuy) {
+          if (window.ShopifyBuy.UI) {
+            ShopifyBuyInit();
+          } else {
+            loadScript();
+          }
+        } else {
+          loadScript();
+        }
+        function loadScript() {
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = scriptURL;
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+          script.onload = ShopifyBuyInit;
+        }
+        function ShopifyBuyInit() {
+          var client = ShopifyBuy.buildClient({
+            domain: 't4pdif-nv.myshopify.com',
+            storefrontAccessToken: '5b3c279852f9c76f45beb139d77f7328',
+          });
+          ShopifyBuy.UI.onReady(client).then(function (ui) {
+            window.ShopifyBuyUI = ui;
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

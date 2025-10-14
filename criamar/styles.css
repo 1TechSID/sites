@@ -74,26 +74,26 @@ a:focus-visible { outline: 3px solid rgba(0,79,171,.35); outline-offset: 2px; bo
 .section.hero::after {
   content: "";
   position: absolute; inset: 0; z-index: 1;
-  /* overlay apenas à esquerda; direita totalmente livre para a foto */
+  /* overlay melhorado com maior contraste e cobertura mais ampla */
   background: linear-gradient(90deg,
-    rgba(7,20,38,.72) 0%,
-    rgba(7,20,38,.58) 26%,
-    rgba(7,20,38,.34) 48%,
-    rgba(7,20,38,0) 68%,
+    rgba(7,20,38,.85) 0%,
+    rgba(7,20,38,.75) 30%,
+    rgba(7,20,38,.55) 55%,
+    rgba(7,20,38,.25) 75%,
     rgba(7,20,38,0) 100%
   );
 }
 .hero-bg {
   position: absolute; inset: 0; z-index: 0; opacity: 1; /* imagem plena; overlay só à esquerda */
-  background-image: url("assets/images/abrace um amigo.jpeg");
+  background-image: url("assets/images/criamar_bk.png");
   background-size: cover; background-position: center 35%;
   filter: saturate(1.08) contrast(1.04) brightness(1.02);
 }
 .hero-inner { padding: 92px 0 56px; position: relative; z-index: 2; }
 .hero-content { max-width: 880px; }
-.hero h1 { font-size: clamp(28px, 5vw, 48px); line-height: 1.12; margin: 0 0 14px; color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,.22); }
+.hero h1 { font-size: clamp(28px, 5vw, 48px); line-height: 1.12; margin: 0 0 14px; color: #fff; text-shadow: 0 3px 12px rgba(0,0,0,.45), 0 1px 6px rgba(0,0,0,.6); }
 .hero .highlight { color: #cfe1ff; }
-.hero .subtitle { color: #e8eefc; text-shadow: 0 2px 8px rgba(0,0,0,.18); }
+.hero .subtitle { color: #e8eefc; text-shadow: 0 2px 10px rgba(0,0,0,.35), 0 1px 4px rgba(0,0,0,.5); }
 .hero .cta--ghost { color: #fff; border-color: rgba(255,255,255,.55); }
 .hero .cta--ghost:hover { border-color: #fff; background: rgba(255,255,255,.08); }
 .subtitle { font-size: clamp(16px, 2.4vw, 20px); color: #22314f; opacity: .95; margin: 0 0 26px; }
@@ -102,9 +102,9 @@ a:focus-visible { outline: 3px solid rgba(0,79,171,.35); outline-offset: 2px; bo
 /* Eyebrow tag (desktop) */
 .eyebrow {
   display: inline-block; margin: 0 0 10px; padding: 6px 12px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .4px; text-transform: uppercase;
-  color: #0e1f3f; background: #ffffff; border: 1px solid rgba(0,0,0,.10);
-  text-shadow: none; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
-  box-shadow: 0 6px 14px rgba(0,0,0,.10);
+  color: #0e1f3f; background: rgba(255,255,255,.95); border: 1px solid rgba(0,0,0,.15);
+  text-shadow: none; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.25), 0 2px 6px rgba(0,0,0,.15);
 }
 .cta { display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   background: var(--primary); color: #fff; height: 44px; padding: 0 20px; border-radius: 999px; border: 2px solid transparent; line-height: 1; transform: translateZ(0);
@@ -226,16 +226,16 @@ a:focus-visible { outline: 3px solid rgba(0,79,171,.35); outline-offset: 2px; bo
   .section.hero::after { display: none; }
   /* Foto retangular reduzida */
   .hero-bg { position: static !important; display: block; width: 100%; height: 42vh; min-height: 260px; background-position: center 28%; opacity: 1; }
-  /* Card sobreposto com glassmorphism */
-  .hero-inner { position: relative; z-index: 2; padding: 18px; background: rgba(255,255,255,.60); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-                border: 1px solid rgba(255,255,255,.65); border-radius: 16px; box-shadow: 0 12px 26px rgba(10,24,46,.18);
+  /* Card sobreposto com glassmorphism melhorado */
+  .hero-inner { position: relative; z-index: 2; padding: 18px; background: rgba(255,255,255,.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+                border: 1px solid rgba(255,255,255,.8); border-radius: 16px; box-shadow: 0 16px 32px rgba(10,24,46,.25), 0 4px 12px rgba(10,24,46,.15);
                 margin: -32px 12px 20px; }
   .hero h1 { font-size: clamp(24px, 6.2vw, 32px); line-height: 1.22; color: #0E2242; text-shadow: none; }
   .subtitle { font-size: 15px; }
   .hero .subtitle { color: #3A4A66; opacity: .98; text-shadow: none; }
   .hero .highlight { color: var(--primary); }
   .hero-content > * { margin-left: 8px; margin-right: 8px; }
-  .eyebrow { display: inline-block; margin: 0 8px 8px; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: .4px; text-transform: uppercase; color: #0e1f3f; background: #eef4ff; box-shadow: 0 4px 14px rgba(0,0,0,.06); }
+  .eyebrow { display: inline-block; margin: 0 8px 8px; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: .4px; text-transform: uppercase; color: #0e1f3f; background: rgba(238,244,255,.95); border: 1px solid rgba(0,79,171,.15); box-shadow: 0 6px 16px rgba(0,0,0,.12); }
   .two-col { gap: 20px; }
   .impact-card img { width: 180px; }
 }
@@ -246,7 +246,7 @@ a:focus-visible { outline: 3px solid rgba(0,79,171,.35); outline-offset: 2px; bo
   .cta { padding: 12px 16px; font-size: 14px; }
   /* ≤420px: apenas ajustes finos sobre a base ≤700px */
   .hero-bg { height: 45vh; min-height: 260px; background-position: center 28%; }
-  .hero-inner { padding: 16px; margin: -28px 10px 18px; border-radius: 16px; }
+  .hero-inner { padding: 16px; margin: -28px 10px 18px; border-radius: 16px; background: rgba(255,255,255,.88); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border: 1px solid rgba(255,255,255,.85); box-shadow: 0 18px 36px rgba(10,24,46,.3), 0 6px 16px rgba(10,24,46,.18); }
   .hero h1 { font-size: 22px; line-height: 1.22; }
   .subtitle { font-size: 14px; }
   .hero-content > * { margin-left: 8px; margin-right: 8px; }
